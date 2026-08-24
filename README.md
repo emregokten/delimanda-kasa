@@ -66,6 +66,46 @@ geri düşmez:
 - `sutlu-kahve.jpg`
 - `su-500ml.jpg`
 
+Dosyaları ekledikten sonra `git add`, `git commit`, `git push` yapman yeterli
+— `main`'e her push GitHub Pages'i otomatik günceller (aşağıdaki "Başka bir
+bilgisayardan devam etmek" bölümüne bak). Fotoğraflar build'e dahil olduğu
+için offline önbelleğe de otomatik giriyor, ayrıca bir ayar gerekmez.
+
+## Başka bir bilgisayardan devam etmek
+
+Bu, ana `Delimanda Claude` monorepo'sundan **ayrı, bağımsız bir repo**
+(`https://github.com/emregokten/delimanda-kasa`) — GitHub Pages'in ücretsiz
+planda sadece public repolarda çalışması yüzünden böyle kuruldu (bkz. ana
+repodaki `DURUM.md`). Farklı bir bilgisayarda devam etmek için:
+
+```bash
+git clone https://github.com/emregokten/delimanda-kasa.git
+cd delimanda-kasa
+npm install
+```
+
+Yeni bir Claude Code oturumu açıp bu klasörü (`delimanda-kasa`) gösterip bu
+README'yi okumasını istersen, aynı context'e hemen sahip olur — ayrıca bir
+şey anlatmana gerek kalmaz. Değişiklik yapıp `git push` ettiğinde GitHub
+Pages birkaç dakika içinde otomatik güncellenir.
+
+## Tablet güncellemeleri nasıl alıyor?
+
+Uygulama "otomatik güncelleme" modunda kurulu (`vite-plugin-pwa` /
+`registerType: autoUpdate`). Yani:
+
+1. GitHub'a push edip deploy tamamlandıktan sonra,
+2. iPad **internete bağlıyken** uygulamayı bir kez kapatıp tekrar açtığında
+   (ya da Safari'de sayfayı yenilediğinde), tarayıcı arka planda yeni
+   sürümü indirir ve devreye alır.
+3. Genelde tek seferde uygulanır; emin olmak için bir kez daha kapatıp
+   açman yeterli.
+
+Yani festival öncesi/arasında örneğin gerçek ürün fotoğraflarını
+eklediğinde, tabletin uçak modunu kapatıp uygulamayı bir kez yeniden
+açman güncellemeyi almak için yeterli — tekrar "Ana Ekrana Ekle" yapmana
+gerek yok.
+
 ## Ödeme ve Excel kaydı nasıl çalışır
 
 - Sepete ürün eklenir, adetler +/− ile değiştirilir, ürün ✕ ile çıkarılır.

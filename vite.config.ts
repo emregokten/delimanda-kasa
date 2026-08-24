@@ -32,7 +32,9 @@ export default defineConfig(({ command }) => ({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
+        // jpg/jpeg/webp dahil: ürün fotoğrafları (public/images/products/*.jpg)
+        // eklendiğinde offline önbelleğe otomatik girsin diye.
+        globPatterns: ['**/*.{js,css,html,svg,png,jpg,jpeg,webp,ico}'],
       },
     }),
   ],
